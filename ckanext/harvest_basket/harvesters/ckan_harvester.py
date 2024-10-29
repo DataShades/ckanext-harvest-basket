@@ -25,7 +25,7 @@ class CustomCKANHarvester(CKANHarvester, BasketBasicHarvester):
 
         self.handle_conditions(
             package_dict,
-            self.config.get("conditions"),
+            self.config.get("conditions", []),
             harvest_object.harvest_source_id)
 
         harvest_object.content = json.dumps(package_dict)
