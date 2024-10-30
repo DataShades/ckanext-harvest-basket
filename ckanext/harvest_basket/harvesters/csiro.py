@@ -7,13 +7,11 @@ import uuid
 from typing import Any, Iterable
 
 from ckan.lib.munge import munge_name, munge_tag
-from ckan.logic import ValidationError
 import ckan.plugins.toolkit as tk
 
 from ckan import model
 from ckanext.harvest.model import HarvestObject
 from ckanext.harvest.harvesters.ckanharvester import SearchError
-from ckanext.spatial import harvesters
 
 from ckanext.harvest_basket.harvesters.base_harvester import BasketBasicHarvester
 

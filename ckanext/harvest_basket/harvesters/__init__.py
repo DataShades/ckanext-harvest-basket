@@ -5,8 +5,11 @@ from ckanext.harvest_basket.harvesters.arcgis_harvester import ArcGISHarvester
 from ckanext.harvest_basket.harvesters.ckan_harvester import CustomCKANHarvester
 from ckanext.harvest_basket.harvesters.ods_harvester import ODSHarvester
 from .dcat import BasketDcatJsonHarvester
-from .csw import BasketCswHarvester
 from .csiro import CsiroHarvester
+try:
+    from .csw import BasketCswHarvester
+except ImportError:
+    pass
 
 __all__ = [
     "DKANHarvester",
