@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- insertion marker -->
+## [v1.3.11](https://github.com/datashades/ckanext-harvest-basket/releases/tag/v1.3.11) - 2024-10-30
+
+<small>[Compare with v1.3.10](https://github.com/datashades/ckanext-harvest-basket/compare/v1.3.10...v1.3.11)</small>
+
+### Bug Fixes
+
+- extension does not work without ckanext-spatial ([7a95120](https://github.com/datashades/ckanext-harvest-basket/commit/7a95120b01f9f26e569a81aa35c9c1f8825c3243) by Sergey Motornyuk).
+
 ## [v1.3.10](https://github.com/datashades/ckanext-harvest-basket/releases/tag/v1.3.10) - 2024-10-30
 
 <small>[Compare with v1.3.9](https://github.com/datashades/ckanext-harvest-basket/compare/v1.3.9...v1.3.10)</small>
