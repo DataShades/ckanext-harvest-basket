@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://datashades.github.io/ckanext-harvest-basket/installation/">
+        <link rel="canonical" href="https://datashades.github.io/ckanext-harvest-basket/source_preview/">
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../configuration/">
       
       
-        <link rel="next" href="../configuration/">
+        <link rel="next" href="../harvesters/base/">
       
       
       <link rel="icon" href="../img/favicon.ico">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Installation - ckanext-harvest-basket</title>
+        <title>Source preview - ckanext-harvest-basket</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#installation" class="md-skip">
+        <a href="#example" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Installation
+              Source preview
             
           </span>
         </div>
@@ -280,30 +280,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Installation
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -312,53 +292,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#requirements" class="md-nav__link">
-    <span class="md-ellipsis">
-      Requirements
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installation_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Installation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dependencies" class="md-nav__link">
-    <span class="md-ellipsis">
-      Dependencies
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -387,10 +320,28 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../source_preview/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Source preview
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -399,6 +350,33 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -714,8 +692,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -724,27 +700,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#requirements" class="md-nav__link">
+  <a href="#example" class="md-nav__link">
     <span class="md-ellipsis">
-      Requirements
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installation_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Installation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dependencies" class="md-nav__link">
-    <span class="md-ellipsis">
-      Dependencies
+      Example
     </span>
   </a>
   
@@ -768,68 +726,20 @@
   
 
 
-<h1 id="installation">Installation</h1>
-<h2 id="requirements">Requirements</h2>
-<p>Compatibility with core CKAN versions:</p>
-<table>
-<thead>
-<tr>
-<th>CKAN version</th>
-<th>Compatible?</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2.9</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>2.10</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>2.11</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>master</td>
-<td>not tested</td>
-</tr>
-</tbody>
-</table>
-<h2 id="installation_1">Installation</h2>
-<ol>
-<li>
-<p>Install the extension from <code>PyPI</code>:
-    <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>ckanext-harvest-basket
-</code></pre></div></p>
-</li>
-<li>
-<p>Enable the main plugin and harvesters you want to use in your CKAN configuration file (e.g. <code>ckan.ini</code> or <code>production.ini</code>):</p>
-<div class="highlight"><pre><span></span><code><span class="na">ckan.plugins</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">... harvest_basket arcgis_harvester socrata_harvester ...</span>
-</code></pre></div>
-</li>
-</ol>
-<h2 id="dependencies">Dependencies</h2>
-<p>The extension requires the following CKAN extensions to be installed and enabled:</p>
-<ol>
-<li>
-<p><a href="https://github.com/ckan/ckanext-harvest">ckanext-harvest</a>:
-This extension is built on top of ckanext-harvest. You need to install and enable it because ckanext-harvest-basket only provides the harvesters, not the harvesting process itself. Without it, the extension won’t work.</p>
-</li>
-<li>
-<p><a href="https://github.com/DataShades/ckanext-transmute">ckanext-transmute</a> (<em>optional</em>):
-If you want to modify remote data based on a schema in your harvest source configuration, you'll need to install and enable ckanext-transmute.</p>
-</li>
-<li>
-<p><a href="https://github.com/ckan/ckanext-dcat">ckanext-dcat</a> (<em>optional</em>):
-If you want to harvest metadata from DCAT JSON files, you'll need to install and enable ckanext-dcat, as we're inheriting the original DCAT harvester from there.</p>
-</li>
-<li>
-<p><a href="https://github.com/ckan/ckanext-spatial">ckanext-spatial</a> (<em>optional</em>):
-If you want to harvest metadata from CSW servers, you'll need to install and enable ckanext-spatial, as we're inheriting the original CSW harvester from there.</p>
-</li>
-</ol>
+  <h1>Source preview</h1>
+
+<p>A source preview feature allows you to see the data that will be harvested from a source before you actually harvest it.</p>
+<p>How we can use it:</p>
+<ul>
+<li>You can ensure, that the provided source URL is correct and the data is accessible.</li>
+<li>If remote portal requires authentication, you can check if the provided credentials are correct.</li>
+<li>You can see the remote portal data and adjust the transmute schema to transform the harvested data to fit your CKAN instance dataset schema.</li>
+</ul>
+<p>A source preview basically uses the same logic as the harvester, but instead of creating or updating a dataset in CKAN, it just returns the harvested data. It's also harvests only 1 dataset, so it's faster than a regular harvest.</p>
+<p>Source preview process uses the same config, as the regular harvest process, but the <strong>transmute schema is not applied</strong>.</p>
+<h2 id="example">Example</h2>
+<p>On the example you can see the source preview block, which is available during the harvest source creation.</p>
+<p><img alt="Source checkup preview" src="../img/check_example.png" /></p>
 
 
 
@@ -865,7 +775,7 @@ If you want to harvest metadata from CSW servers, you'll need to install and ena
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home">
+          <a href="../configuration/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Configuration">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -875,20 +785,20 @@ If you want to harvest metadata from CSW servers, you'll need to install and ena
                 Previous
               </span>
               <div class="md-ellipsis">
-                Home
+                Configuration
               </div>
             </div>
           </a>
         
         
           
-          <a href="../configuration/" class="md-footer__link md-footer__link--next" aria-label="Next: Configuration">
+          <a href="../harvesters/base/" class="md-footer__link md-footer__link--next" aria-label="Next: Basic Information">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Configuration
+                Basic Information
               </div>
             </div>
             <div class="md-footer__button md-icon">
