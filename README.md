@@ -1,5 +1,3 @@
-# Home
-
 The **ckanext-harvest-basket** extension adds a set of custom harvesters to CKAN, making it easy to gather data from various platforms like ODS, ArcGIS, Socrata, DKAN, Junar, and more. With these harvesters, you can automatically pull datasets from different sources into your CKAN instance, helping you manage and share data more efficiently.
 
 Key features:

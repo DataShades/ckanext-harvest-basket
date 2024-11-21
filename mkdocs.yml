@@ -76,6 +76,7 @@ nav:
   - index.md
   - installation.md
   - configuration.md
+  - source_preview.md
   - Harvesters:
     - harvesters/base.md
     - harvesters/ArcGIS.md
@@ -87,6 +88,7 @@ nav:
     - harvesters/Junar.md
     - harvesters/ODS.md
     - harvesters/Socrata.md
+  - troubleshooting.md
 
 watch:
   - README.md

@@ -10,6 +10,8 @@ Otherwise, you'd need to write a custom harvester and process the remote data yo
 
 See the `ckanext-transmute` [documentation](https://github.com/DataShades/ckanext-transmute?tab=readme-ov-file#working-with-transmute) to learn more about the transmute schema syntax.
 
+{% include-markdown "./tsm_example.md" %}
+
 **Type**: `dict[str, Any]`
 
 **Default**: `None`

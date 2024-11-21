@@ -1,5 +1,0 @@
-html2markdown
-geojson~=2.5.0
-jsonschema
-
-ckanext-transmute~=1.6.0
