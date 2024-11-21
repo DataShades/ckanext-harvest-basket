@@ -1,7 +1,7 @@
 {% ckan_extends %}
 
 {% block extra_config %}
-    {% set config_placeholder = '{
+    {%- set config_placeholder = '{
         "max_datasets": 10,
         "tsm_schema":{
             "root":"Dataset",
@@ -16,7 +16,7 @@
             }
         }
     }'
-    %}
+    -%}
 
     <div class="form-group control-full">
         <label class="control-label" for="field-config">

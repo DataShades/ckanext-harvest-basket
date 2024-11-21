@@ -26,6 +26,12 @@ keywords = ["CKAN"]
 dependencies = []
 optional-dependencies = {}
 
+[project.optional-dependencies]
+dev = [
+    "pytest-ckan",
+    "mkdocs>=1.6.1,<1.7",
+]
+
 [project.readme]
 file = "README.md"
 content-type = "text/markdown"

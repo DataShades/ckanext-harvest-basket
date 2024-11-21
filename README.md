@@ -1,63 +1,48 @@
-The `harvest_basket` extension comes with a few custom **harvesters** for different data portals.
-The list of available harvesters, that must be enabled with `ckan.plugins` in your config:
-- `dkan_harvester`
-- `junar_harvester`
-- `socrata_harvester`
-- `arcgis_harvester`
+# Home
 
-This extension also adds some features to extend the basic harvester:
-1. Source checkup preview. During the source creation stage the harvester will try to access the remote portal and harvest one dataset to check if it's accessible or not. (TODO: the source checkup interface will be documented soon).
-2. Restriction for anonymous users to visit harveser pages
+The **ckanext-harvest-basket** extension adds a set of custom harvesters to CKAN, making it easy to gather data from various platforms like ODS, ArcGIS, Socrata, DKAN, Junar, and more. With these harvesters, you can automatically pull datasets from different sources into your CKAN instance, helping you manage and share data more efficiently.
 
-## Installation
+Key features:
 
+* Harvesters for popular data platforms, including CKAN, ODS, ArcGIS, Socrata, DKAN, Junar and others.
+* Integration with the [ckanext-transmute](https://github.com/DataShades/ckanext-transmute) extension, which allows you to transform datasets during the harvesting process using a harvest source configuration.
+* Source checkup preview. When creating a source, the harvester will try to connect to the remote portal and harvest one dataset to check if it’s accessible.
+* Anonymous user restrictions. You can disallow anonymous users from accessing harvester pages.
 
-To install ckanext-harvest-basket:
+See the [documentation](https://datashades.github.io/ckanext-harvest-basket/) for more information.
 
-1. Activate your CKAN virtual environment, for example:
+## Quick start
 
-     . /usr/lib/ckan/default/bin/activate
+1. Install the extension from `PyPI`:
+    ```bash
+    pip install ckanext-harvest-basket
+    ```
 
-2. Clone the source and install it on the virtualenv
+2. Enable the main plugin and harvesters you want to use in your CKAN configuration file (e.g. `ckan.ini` or `production.ini`):
 
-    git clone https://github.com/DataShades/ckanext-harvest-basket.git
-    cd ckanext-harvest-basket
-    pip install -e .
-	pip install -r requirements.txt
-
-3. Add `harvest_basket` to the `ckan.plugins` setting in your CKAN
-   config file (by default the config file is located at
-   `/etc/ckan/default/ckan.ini`).
-
-4. Restart CKAN. For example if you've deployed CKAN with Apache on Ubuntu:
-
-     sudo service apache2 reload
-
-
-## Config settings
-Available config options:
-
-	# You can disallow accessing harvester pages for anonymous users.
-	# (optional, default: 1).
-	ckanext.harvest_basket.allow_anonymous = 0
-
+    ```ini
+    ckan.plugins = ... harvest_basket arcgis_harvester socrata_harvester ...
+    ```
 
 ## Developer installation
 
-To install ckanext-harvest-basket for development, activate your CKAN virtualenv and
+To install `ckanext-harvest-basket` for development, activate your CKAN virtualenv and
 do:
 
-    git clone https://github.com/DataShades/ckanext-harvest-basket.git
-    cd ckanext-harvest-basket
-    python setup.py develop
-    pip install -r requirements.txt
+```bash
+git clone https://github.com/DataShades/ckanext-harvest-basket.git
+cd ckanext-harvest-basket
+pip install -e '.[dev]'
+```
 
 
 ## Tests
 
 To run the tests, do:
 
-    pytest --ckan-ini=test.ini
+```bash
+pytest --ckan-ini=test.ini
+```
 
 ## License
 
