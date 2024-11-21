@@ -1,16 +1,17 @@
 from __future__ import annotations
+
 import json
 import logging
 from typing import Any
 
-
-from ckan.plugins import toolkit as tk
-from ckan.lib.munge import munge_name
-
+from ckanext.harvest.harvesters.ckanharvester import (ContentFetchError,
+                                                      SearchError)
 from ckanext.harvest.model import HarvestObject
-from ckanext.harvest.harvesters.ckanharvester import ContentFetchError, SearchError
+from ckanext.harvest_basket.harvesters.base_harvester import \
+    BasketBasicHarvester
 
-from ckanext.harvest_basket.harvesters.base_harvester import BasketBasicHarvester
+from ckan.lib.munge import munge_name
+from ckan.plugins import toolkit as tk
 
 log = logging.getLogger(__name__)
 

@@ -1,14 +1,13 @@
-import logging
 import json
+import logging
 from urllib.parse import urljoin
 
-from ckan.lib.munge import munge_name
-
-from ckanext.harvest.model import HarvestObject
 from ckanext.harvest.harvesters.ckanharvester import SearchError
+from ckanext.harvest.model import HarvestObject
+from ckanext.harvest_basket.harvesters.base_harvester import \
+    BasketBasicHarvester
 
-from ckanext.harvest_basket.harvesters.base_harvester import BasketBasicHarvester
-
+from ckan.lib.munge import munge_name
 
 log = logging.getLogger(__name__)
 

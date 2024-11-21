@@ -18,6 +18,10 @@ markdown_extensions:
             alternate_style: true
 
 plugins:
+    - exclude:
+        glob:
+          - harvesters/snippets/*
+    - include-markdown:
     - search:
         separator: '[\s\-\.\_]+'
     - mkdocstrings:
@@ -76,10 +80,13 @@ nav:
     - harvesters/base.md
     - harvesters/ArcGIS.md
     - harvesters/CKAN.md
+    - harvesters/CSIRO.md
+    - harvesters/CSW.md
+    - harvesters/DCAT_JSON.md
+    - harvesters/DKAN.md
     - harvesters/Junar.md
     - harvesters/ODS.md
     - harvesters/Socrata.md
-    - harvesters/DKAN.md
 
 watch:
   - README.md

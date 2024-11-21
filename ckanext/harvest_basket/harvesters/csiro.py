@@ -1,20 +1,19 @@
 from __future__ import annotations
 
 import contextlib
-import logging
 import json
+import logging
 import uuid
 from typing import Any, Iterable
 
-from ckan.lib.munge import munge_name, munge_tag
-import ckan.plugins.toolkit as tk
-
-from ckan import model
-from ckanext.harvest.model import HarvestObject
 from ckanext.harvest.harvesters.ckanharvester import SearchError
+from ckanext.harvest.model import HarvestObject
+from ckanext.harvest_basket.harvesters.base_harvester import \
+    BasketBasicHarvester
 
-from ckanext.harvest_basket.harvesters.base_harvester import BasketBasicHarvester
-
+import ckan.plugins.toolkit as tk
+from ckan import model
+from ckan.lib.munge import munge_name, munge_tag
 
 log = logging.getLogger(__name__)
 

@@ -1,8 +1,8 @@
+from ckanext.harvest_basket.action.auth import get_auth_functions
+from ckanext.harvest_basket.action.logic import get_actions
+
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
-
-from ckanext.harvest_basket.action.logic import get_actions
-from ckanext.harvest_basket.action.auth import get_auth_functions
 
 
 class HarvestBasketPlugin(plugins.SingletonPlugin):

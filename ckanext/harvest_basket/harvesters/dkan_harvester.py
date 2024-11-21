@@ -1,17 +1,17 @@
-import logging
-import requests
 import json
+import logging
+from time import sleep
 from urllib import parse
 from urllib.parse import urljoin
-from time import sleep
+
+import requests
+from ckanext.harvest.harvesters.ckanharvester import (ContentFetchError,
+                                                      SearchError)
+from ckanext.harvest.model import HarvestObject
+from ckanext.harvest_basket.harvesters.base_harvester import \
+    BasketBasicHarvester
 
 from ckan.lib.munge import munge_tag
-
-from ckanext.harvest.model import HarvestObject
-from ckanext.harvest.harvesters.ckanharvester import ContentFetchError, SearchError
-
-from ckanext.harvest_basket.harvesters.base_harvester import BasketBasicHarvester
-
 
 log = logging.getLogger(__name__)
 

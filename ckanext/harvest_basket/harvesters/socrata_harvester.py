@@ -1,21 +1,20 @@
 from __future__ import annotations
 
 import logging
-from typing import Any
 from io import BytesIO
+from typing import Any
 from urllib import parse
 
 import geojson
+from ckanext.harvest.harvesters.ckanharvester import (ContentFetchError,
+                                                      SearchError)
+from ckanext.harvest.model import HarvestObject
+from ckanext.harvest_basket.harvesters.base_harvester import \
+    BasketBasicHarvester
 
 from ckan.lib.helpers import json
-from ckan.plugins import toolkit as tk
 from ckan.lib.munge import munge_tag
-
-from ckanext.harvest.model import HarvestObject
-from ckanext.harvest.harvesters.ckanharvester import ContentFetchError, SearchError
-
-from ckanext.harvest_basket.harvesters.base_harvester import BasketBasicHarvester
-
+from ckan.plugins import toolkit as tk
 
 log = logging.getLogger(__name__)
 

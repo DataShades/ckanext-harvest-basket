@@ -1,22 +1,23 @@
 from __future__ import annotations
-import requests
-import logging
-import json
-import uuid
-from typing import Any, Optional
-from datetime import datetime as dt
-from dateutil import parser
-from html import unescape
 
+import json
+import logging
+import uuid
+from datetime import datetime as dt
+from html import unescape
+from typing import Any, Optional
+
+import requests
+from ckanext.harvest.harvesters.base import HarvesterBase
+from ckanext.transmute.utils import get_schema
+from dateutil import parser
 from html2markdown import convert
 
 import ckan.plugins.toolkit as tk
-from ckan.plugins import plugin_loaded
 from ckan import model
 from ckan.lib.munge import munge_tag
-from ckanext.transmute.utils import get_schema
+from ckan.plugins import plugin_loaded
 
-from ckanext.harvest.harvesters.base import HarvesterBase
 try:
     from ckanext.xloader.plugin import XLoaderFormats
 except ImportError:

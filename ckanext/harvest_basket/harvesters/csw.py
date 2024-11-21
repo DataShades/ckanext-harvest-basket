@@ -1,14 +1,15 @@
 from __future__ import annotations
 
 import logging
-from lxml import etree
-from ckanext.spatial.harvesters import CSWHarvester
-from ckanext.spatial.lib.csw_client import CswService, CswError, PropertyIsEqualTo
-from ckanext.transmute.utils import get_schema
-from .base_harvester import BasketBasicHarvester
 
-from requests import utils as request_utils
 import owslib.util as ows_util
+from ckanext.spatial.harvesters import CSWHarvester
+from ckanext.spatial.lib.csw_client import (CswError, CswService,
+                                            PropertyIsEqualTo)
+from lxml import etree
+from requests import utils as request_utils
+
+from .base_harvester import BasketBasicHarvester
 
 # from requests_cache import install_cache
 # def ff(resp):

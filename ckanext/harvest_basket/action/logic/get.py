@@ -3,19 +3,15 @@ from __future__ import annotations
 import json
 from typing import Any, Optional
 
-from jsonschema import validate, ValidationError as SchemaValidationError
+from ckanext.harvest_basket.harvesters import (ArcGISHarvester,
+                                               CustomCKANHarvester,
+                                               DKANHarvester, JunarHarvester,
+                                               ODSHarvester, SocrataHarvester)
+from ckanext.transmute.utils import get_json_schema
+from jsonschema import ValidationError as SchemaValidationError
+from jsonschema import validate
 
 import ckan.plugins.toolkit as tk
-
-from ckanext.harvest_basket.harvesters import (
-    DKANHarvester,
-    JunarHarvester,
-    SocrataHarvester,
-    ArcGISHarvester,
-    CustomCKANHarvester,
-    ODSHarvester,
-)
-from ckanext.transmute.utils import get_json_schema
 
 
 @tk.side_effect_free

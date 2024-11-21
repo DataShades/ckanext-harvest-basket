@@ -4,6 +4,7 @@ import json
 
 from ckanext.dcat.harvesters import DCATJSONHarvester
 from ckanext.transmute.utils import get_schema
+
 from .base_harvester import BasketBasicHarvester
 
 

@@ -24,12 +24,18 @@ classifiers = [
 ]
 keywords = ["CKAN"]
 dependencies = []
-optional-dependencies = {}
 
 [project.optional-dependencies]
 dev = [
     "pytest-ckan",
     "mkdocs>=1.6.1,<1.7",
+    "mkdocs-material>=9.5.42,<10",
+    "mkdocs-include-markdown-plugin>=6.2.2,<7",
+    "mkdocstrings-python>=1.11.1,<2",
+    "mkdocs-exclude>=1.0.2,<2"
+]
+csw = [
+    "OWSLib>=0.31.0,<1"
 ]
 
 [project.readme]

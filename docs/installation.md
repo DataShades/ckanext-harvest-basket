@@ -33,3 +33,9 @@ This extension is built on top of ckanext-harvest. You need to install and enabl
 
 2. [ckanext-transmute](https://github.com/DataShades/ckanext-transmute) (_optional_):
 If you want to modify remote data based on a schema in your harvest source configuration, you'll need to install and enable ckanext-transmute.
+
+3. [ckanext-dcat](https://github.com/ckan/ckanext-dcat) (_optional_):
+If you want to harvest metadata from DCAT JSON files, you'll need to install and enable ckanext-dcat, as we're inheriting the original DCAT harvester from there.
+
+4. [ckanext-spatial](https://github.com/ckan/ckanext-spatial) (_optional_):
+If you want to harvest metadata from CSW servers, you'll need to install and enable ckanext-spatial, as we're inheriting the original CSW harvester from there.

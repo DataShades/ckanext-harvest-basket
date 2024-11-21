@@ -1,15 +1,14 @@
 import json
 import logging
 
-import ckan.plugins.toolkit as tk
-from ckan import model
-
 from ckanext.harvest.harvesters import CKANHarvester
 from ckanext.harvest.harvesters.ckanharvester import SearchError
-
-from ckanext.harvest_basket.harvesters.base_harvester import BasketBasicHarvester
+from ckanext.harvest_basket.harvesters.base_harvester import \
+    BasketBasicHarvester
 from ckanext.transmute.utils import get_schema
 
+import ckan.plugins.toolkit as tk
+from ckan import model
 
 log = logging.getLogger(__name__)
 

@@ -1,19 +1,18 @@
 from __future__ import annotations
 
-import mimetypes
-import logging
 import json
+import logging
+import mimetypes
 from typing import Any
-from urllib.parse import urljoin, urlencode
+from urllib.parse import urlencode, urljoin
+
+from ckanext.harvest.harvesters.ckanharvester import SearchError
+from ckanext.harvest.model import HarvestObject
+from ckanext.harvest_basket.harvesters.base_harvester import \
+    BasketBasicHarvester
 
 import ckan.plugins.toolkit as tk
 from ckan.lib.navl.validators import unicode_safe
-
-from ckanext.harvest.model import HarvestObject
-from ckanext.harvest.harvesters.ckanharvester import SearchError
-
-from ckanext.harvest_basket.harvesters.base_harvester import BasketBasicHarvester
-
 
 log = logging.getLogger(__name__)
 
