@@ -141,7 +141,6 @@ class BasketCswService(CswService):
 
         constraints = []
         csw = self._ows(**kw)
-        limit=100
 
         if qtype is not None:
             constraints.append(PropertyIsEqualTo("dc:type", qtype))
