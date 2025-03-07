@@ -1,12 +1,14 @@
 from __future__ import annotations
 
 import json
+import logging
 
 from ckanext.dcat.harvesters import DCATJSONHarvester
 from ckanext.transmute.utils import get_schema
 
 from .base_harvester import BasketBasicHarvester
 
+log = logging.getLogger(__name__)
 
 class BasketDcatJsonHarvester(DCATJSONHarvester, BasketBasicHarvester):
     SRC_ID = "DCAT"
@@ -27,3 +29,11 @@ class BasketDcatJsonHarvester(DCATJSONHarvester, BasketBasicHarvester):
 
         self._transmute_content(package_dict)
         return package_dict
+    
+    def import_stage(self, harvest_object):
+        result = False
+        try:
+            result = super().import_stage(harvest_object)
+        except Exception as e:
+            log.error(f"{self.SRC_ID}: import stage failed: {e}")
+            return result

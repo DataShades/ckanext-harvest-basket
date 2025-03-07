@@ -17,13 +17,19 @@ class CustomCKANHarvester(CKANHarvester, BasketBasicHarvester):
     SRC_ID = "CKAN"
 
     def import_stage(self, harvest_object):
-        package_dict = json.loads(harvest_object.content)
-        self._set_config(harvest_object.source.config)
+        try:
+            package_dict = json.loads(harvest_object.content)
+            self._set_config(harvest_object.source.config)
 
-        self._transmute_content(package_dict)
+            self._transmute_content(package_dict)
 
-        harvest_object.content = json.dumps(package_dict)
-        super().import_stage(harvest_object)
+            harvest_object.content = json.dumps(package_dict)
+            super().import_stage(harvest_object)
+        except Exception as e:
+            log.error(f"{self.SRC_ID}: import stage failed: {e}")
+            return False
+            
+
 
     def _search_for_datasets(self, remote_ckan_base_url, fq_terms=None):
         if fq_terms is None:

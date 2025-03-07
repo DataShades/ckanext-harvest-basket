@@ -113,6 +113,15 @@ class BasketCswHarvester(CSWHarvester, BasketBasicHarvester):
     def _setup_csw_client(self, url):
         self.csw = BasketCswService(url)
 
+    def import_stage(self, harvest_object):
+        result = False
+        try:
+            result = super().import_stage(harvest_object)
+        except Exception as e:
+            log.error(f"{self.SRC_ID}: import stage failed: {e}")
+            return result
+
+
 
 class BasketCswService(CswService):
     def getidentifiers(
@@ -132,6 +141,7 @@ class BasketCswService(CswService):
 
         constraints = []
         csw = self._ows(**kw)
+        limit=100
 
         if qtype is not None:
             constraints.append(PropertyIsEqualTo("dc:type", qtype))
