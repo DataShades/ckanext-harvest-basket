@@ -38,7 +38,7 @@ class BasketDcatJsonHarvester(DCATJSONHarvester, BasketBasicHarvester):
             result = super().import_stage(harvest_object)
         except Exception as e:
             log.error("%s: import stage failed: %s", self.SRC_ID, e)
-            return result
+        return result
 
     def _read_datasets_from_db(self, guid):
         """
