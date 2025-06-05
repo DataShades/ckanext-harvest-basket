@@ -119,7 +119,7 @@ class BasketCswHarvester(CSWHarvester, BasketBasicHarvester):
             result = super().import_stage(harvest_object)
         except Exception as e:
             log.error(f"{self.SRC_ID}: import stage failed: {e}")
-            return result
+        return result
 
 
 

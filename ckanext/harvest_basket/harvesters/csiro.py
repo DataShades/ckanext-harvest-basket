@@ -153,4 +153,4 @@ class CsiroHarvester(BasketBasicHarvester):
             {"key": key, "value": value} for key, value in data.items()
         ]
         harvest_object.content = json.dumps(package_dict)
-        super().import_stage(harvest_object)
+        return super().import_stage(harvest_object)
