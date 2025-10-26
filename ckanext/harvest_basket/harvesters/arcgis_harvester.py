@@ -138,7 +138,7 @@ class ArcGISHarvester(BasketBasicHarvester):
             services_urls = [
                 service["url"] for service in content["services"] if service.get("url")
             ]
-        except KeyError as e:
+        except KeyError:
             log.debug(f"{self.SRC_ID}: there is no available services in remote portal")
             return []
 
@@ -165,7 +165,7 @@ class ArcGISHarvester(BasketBasicHarvester):
 
         try:
             content = json.loads(resp.text)
-        except ValueError as e:
+        except ValueError:
             log.debug(
                 f"{self.SRC_ID}: Can't fetch the metadata. JSON object is corrupted"
             )

@@ -53,7 +53,7 @@ class CsiroHarvester(BasketBasicHarvester):
                     identifier,
                 )
 
-                guid = uuid.uuid5(uuid.NAMESPACE_DNS, identifier)
+                uuid.uuid5(uuid.NAMESPACE_DNS, identifier)
                 obj = HarvestObject(
                     guid=identifier, job=harvest_job, content=json.dumps(record)
                 )

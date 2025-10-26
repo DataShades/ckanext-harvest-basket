@@ -162,7 +162,7 @@ class BasketCswService(CswService):
 
             try:
                 csw.getrecords2(**kwa)
-            except etree.XMLSyntaxError as err:
+            except etree.XMLSyntaxError:
                 log.exception("Cannot parse CSW response")
             else:
                 if csw.exceptionreport:

@@ -13,7 +13,6 @@ from ckanext.harvest_basket.harvesters.base_harvester import \
     BasketBasicHarvester
 
 from ckan.lib.helpers import json
-from ckan.lib.munge import munge_tag
 from ckan.plugins import toolkit as tk
 
 log = logging.getLogger(__name__)
@@ -408,7 +407,7 @@ class SocrataHarvester(BasketBasicHarvester):
             geo = geojson.MultiPoint(points)
             if geo["coordinates"]:
                 return geojson.dumps(geo), url
-        except TypeError as e:
+        except TypeError:
             pass
 
         return "", ""

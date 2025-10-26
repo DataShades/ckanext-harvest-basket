@@ -5,7 +5,6 @@ import logging
 import ckan.plugins.toolkit as tk
 from ckan import model
 from ckanext.dcat.harvesters import DCATJSONHarvester
-from ckanext.transmute.utils import get_schema
 
 from .base_harvester import BasketBasicHarvester
 

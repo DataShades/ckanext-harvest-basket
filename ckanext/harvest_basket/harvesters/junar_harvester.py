@@ -97,7 +97,7 @@ class JunarHarvester(BasketBasicHarvester):
             if resp:
                 try:
                     pkgs_data = resp.json()
-                except ValueError as e:
+                except ValueError:
                     raise SearchError(
                         f"{self.SRC_ID}: invalid response type, not a JSON"
                     )

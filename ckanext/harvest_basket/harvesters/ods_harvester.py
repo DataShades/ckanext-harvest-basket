@@ -3,7 +3,6 @@ from __future__ import annotations
 import json
 import logging
 import mimetypes
-from typing import Any
 from urllib.parse import urlencode, urljoin
 
 from ckanext.harvest.harvesters.ckanharvester import SearchError
@@ -113,7 +112,7 @@ class ODSHarvester(BasketBasicHarvester):
 
             try:
                 pkgs_data = json.loads(resp.text)
-            except ValueError as e:
+            except ValueError:
                 log.debug(
                     f"{self.SRC_ID}: can't fetch the metadata. \
 					Access denied or JSON object is corrupted"
@@ -278,7 +277,7 @@ class ODSHarvester(BasketBasicHarvester):
 
         try:
             content = json.loads(resp.text)
-        except ValueError as e:
+        except ValueError:
             log.debug(
                 f"{self.SRC_ID}: Can't fetch the metadata. \
 				Access denied or JSON object is corrupted"

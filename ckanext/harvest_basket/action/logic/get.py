@@ -23,7 +23,7 @@ def check_source(ctx: dict[str, Any], data_dict: dict) -> dict[str, Any]:
     config: dict = json.loads(data_dict.get("config", "").strip() or "{}")
 
     if not source_url:
-        raise tk.ValidationError(f"The source URL must be provided to make a checkup")
+        raise tk.ValidationError("The source URL must be provided to make a checkup")
 
     sources = {
         "dkan": DKANHarvester,
