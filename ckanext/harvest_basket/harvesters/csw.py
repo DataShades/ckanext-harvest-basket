@@ -1,11 +1,12 @@
 from __future__ import annotations
 
 import logging
+from urllib.parse import urlsplit
 
 import owslib.util as ows_util
 from ckanext.spatial.harvesters import CSWHarvester
-from ckanext.spatial.lib.csw_client import (CswError, CswService,
-                                            PropertyIsEqualTo)
+from ckanext.spatial.lib.csw_client import CswError, CswService, PropertyIsEqualTo
+import requests
 from lxml import etree
 from requests import utils as request_utils
 
@@ -73,7 +74,7 @@ def http_post(
         if password:
             auth.password = password
     else:
-        auth = Authentication(username, password)
+        auth = ows_util.Authentication(username, password)
     if auth.username is not None and auth.password is not None:
         rkwargs["auth"] = (auth.username, auth.password)
     elif auth.auth_delegate is not None:
@@ -122,7 +123,6 @@ class BasketCswHarvester(CSWHarvester, BasketBasicHarvester):
         return result
 
 
-
 class BasketCswService(CswService):
     def getidentifiers(
         self,
@@ -166,7 +166,9 @@ class BasketCswService(CswService):
                 log.exception("Cannot parse CSW response")
             else:
                 if csw.exceptionreport:
-                    err = "Error getting identifiers: %r" % csw.exceptionreport.exceptions
+                    err = (
+                        "Error getting identifiers: %r" % csw.exceptionreport.exceptions
+                    )
                     # log.error(err)
                     raise CswError(err)
 
