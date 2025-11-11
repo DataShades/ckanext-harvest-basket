@@ -25,10 +25,14 @@ class BasketDcatJsonHarvester(DCATJSONHarvester, BasketBasicHarvester):
 
     def modify_package_dict(self, package_dict, dcat_dict, harvest_object):
         self.base_context = {"user": self._get_user_name()}
+        # Preserve the generated package name from _gen_new_name.
+        # If the name already exists, it appends a numeric suffix to ensure uniqueness.
+        package_name = package_dict["name"]
 
         package_dict = json.loads(harvest_object.content)
-        self._set_config(harvest_object.source.config)
 
+        self._set_config(harvest_object.source.config)
+        package_dict["name"] = package_name
         self._transmute_content(package_dict)
         return package_dict
 
