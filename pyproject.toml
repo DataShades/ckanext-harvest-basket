@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ckanext-harvest-basket"
-version = "1.5.4"
+version = "1.5.5"
 description = "A bunch of custom harvesters for ckanext-harvest"
 authors = [
     {name = "DataShades", email = "datashades@linkdigital.com.au"},
@@ -24,10 +24,10 @@ classifiers = [
 ]
 keywords = ["CKAN"]
 dependencies = [
-    "ckanext-transmute>=1.7.0,<2",
+    "ckanext-transmute>=1.8.0,<2",
     "html2markdown>=0.1.7,<1",
     "geojson>=2.5.0, <4",
-    "jsonschema>=3.0.0,<4",
+    "jsonschema>=4.0.0",
 ]
 
 [project.optional-dependencies]
