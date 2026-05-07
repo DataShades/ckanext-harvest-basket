@@ -14,7 +14,7 @@ from dateutil import parser
 from html2markdown import convert
 
 import ckan.plugins.toolkit as tk
-from ckan import model
+from ckan import model, types
 from ckan.lib.munge import munge_tag
 from ckan.plugins import plugin_loaded
 
@@ -169,14 +169,15 @@ class BasketBasicHarvester(HarvesterBase):
         schema = self.config.get("tsm_schema")
         if not schema and (schema_name := self.config.get("tsm_named_schema")):
             schema = get_schema(schema_name)
-        self.transmute_data(package_dict, schema)
+
+        return self.transmute_data(package_dict, schema)
 
     def import_stage(self, harvest_object):
-        self.base_context = {
-            "model": model,
-            "session": model.Session,
-            "user": self._get_user_name(),
-        }
+        self.base_context = types.Context(
+            model=model,
+            session=model.Session,
+            user=self._get_user_name(),
+        )
 
         config = self._set_config(harvest_object.source.config)
 
@@ -189,8 +190,7 @@ class BasketBasicHarvester(HarvesterBase):
             return False
 
         package_dict = json.loads(harvest_object.content)
-
-        self._transmute_content(package_dict)
+        package_dict = self._transmute_content(package_dict)
 
         if package_dict.get("type") == "harvest":
             log.info("Remote dataset is a harvest source, ignoring...")
@@ -255,11 +255,15 @@ class BasketBasicHarvester(HarvesterBase):
         except Exception as e:
             self._save_object_error(str(e), harvest_object, "Import")
 
-    def transmute_data(self, data, schema):
-        if schema:
-            tk.get_action("tsm_transmute")(
-                self.base_context, {"data": data, "schema": schema}
-            )
+    def transmute_data(self, data, schema) -> dict[str, Any]:
+        if not schema:
+            return data
+
+        result = tk.get_action("tsm_transmute")(
+            self.base_context, {"data": data, "schema": schema}
+        )
+
+        return result
 
     def _get_src_url(self, harvest_obj) -> str:
         return harvest_obj.source.url.strip("/")

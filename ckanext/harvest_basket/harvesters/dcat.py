@@ -32,8 +32,7 @@ class BasketDcatJsonHarvester(DCATJSONHarvester, BasketBasicHarvester):
 
         self._set_config(harvest_object.source.config)
         package_dict["name"] = package_name
-        self._transmute_content(package_dict)
-        return package_dict
+        return self._transmute_content(package_dict)
 
     def import_stage(self, harvest_object):
         result = False
